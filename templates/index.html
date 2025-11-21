@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --brand-black: #0b0b0b;
+      --brand-green: #6fdc8c;
+      --brand-white: #ffffff;
+      --brand-yellow: #ffc107;
+      --brand-red: #dc3545;
+    }
+    body { background: var(--brand-white); color: var(--brand-black); }
+    .brand { color: var(--brand-green); font-weight:700; }
+    .card:hover { transform: translateY(-2px); transition: 0.2s ease; }
+    .low-stock { color: var(--brand-red); font-weight: bold; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container">
+      <a class="navbar-brand brand" href="#">InventoryApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navMain" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Warehouses</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Summary -->
+  <header class="py-4 bg-light">
+    <div class="container">
+      <h1 class="mb-4">Inventory Dashboard</h1>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h6>Total Products</h6>
+            <h2>125</h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h6>Total Categories</h6>
+            <h2>8</h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm p-3">
+            <h6>Total Warehouses</h6>
+            <h2>3</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-lg-3 mb-4">
+        <div class="card p-3 mb-3">
+          <h5>Filters</h5>
+          <div class="mb-2">
+            <label class="form-label small">Category</label>
+            <select class="form-select">
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Furniture</option>
+              <option>Office Supplies</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <label class="form-label small">Warehouse</label>
+            <select class="form-select">
+              <option>All</option>
+              <option>Warehouse 1</option>
+              <option>Warehouse 2</option>
+            </select>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Dashboard -->
+      <section class="col-lg-9">
+        <!-- Low Stock Alerts -->
+        <div class="mb-4">
+          <h5>Low Stock Alerts</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Laptop - Warehouse 1
+              <span class="low-stock">2 left</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Office Chair - Warehouse 2
+              <span class="low-stock">5 left</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Notebook - Storefront
+              <span class="low-stock">3 left</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Recent Stock Movements -->
+        <div>
+          <h5>Recent Stock Movements</h5>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Warehouse</th>
+                <th>Type</th>
+                <th>Quantity</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Laptop</td>
+                <td>Warehouse 1</td>
+                <td>Incoming</td>
+                <td>10</td>
+                <td>2025-11-20</td>
+              </tr>
+              <tr>
+                <td>Office Chair</td>
+                <td>Warehouse 2</td>
+                <td>Outgoing</td>
+                <td>2</td>
+                <td>2025-11-19</td>
+              </tr>
+              <tr>
+                <td>Notebook</td>
+                <td>Storefront</td>
+                <td>Incoming</td>
+                <td>50</td>
+                <td>2025-11-18</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top text-center">
+    <p class="mb-0">&copy; 2025 Inventory Management App. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
